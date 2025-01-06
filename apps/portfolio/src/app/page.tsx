@@ -13,7 +13,7 @@ export default function Index() {
           <div id="welcome">
             <h1>
               <span> Hello there, </span>
-              Welcome project-portfolio 👋
+              Welcome portfolio 👋
             </h1>
           </div>
 
@@ -397,7 +397,7 @@ export default function Index() {
                 </svg>
                 View project details
               </summary>
-              <pre>nx show project project-portfolio --web</pre>
+              <pre>nx show project portfolio --web</pre>
             </details>
             <details>
               <summary>
