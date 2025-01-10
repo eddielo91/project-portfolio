@@ -25,9 +25,55 @@ module.exports = [
           allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?js$'],
           depConstraints: [
             {
-              sourceTag: '*',
-              onlyDependOnLibsWithTags: ['*'],
+              sourceTag: "type:app",
+              onlyDependOnLibsWithTags: [
+                "type:feature",
+                "type:ui",
+                "type:data-access",
+                "type:util"
+              ]
             },
+            {
+              sourceTag: "type:feature",
+              onlyDependOnLibsWithTags: [
+                "type:feature",
+                "type:ui",
+                "type:data-access",
+                "type:util"
+              ]
+            },
+            {
+              sourceTag: "type:ui",
+              onlyDependOnLibsWithTags: ["type:ui", "type:util"]
+            },
+            {
+              sourceTag: "type:data-access",
+              onlyDependOnLibsWithTags: ["type:data-access", "type:util"]
+            },
+            {
+              sourceTag: "type:util",
+              onlyDependOnLibsWithTags: ["type:util"]
+            },
+            // {
+            //   sourceTag: "scope:domain",
+            //   onlyDependOnLibsWithTags: ["scope:shared", "scope:domain"]
+            // },
+            {
+              sourceTag: "scope:portfolio",
+              onlyDependOnLibsWithTags: ["scope:shared", "scope:portfolio"]
+            },
+            // {
+            //   sourceTag: "scope:slice",
+            //   onlyDependOnLibsWithTags: ["scope:domain", "scope:slice", "scope:shared"]
+            // },
+            {
+              sourceTag: "scope:shared",
+              onlyDependOnLibsWithTags: ["scope:shared"]
+            },
+            {
+              sourceTag: "scope:state",
+              notDependOnLibsWithTags: ["*"]
+            }
           ],
         },
       ],

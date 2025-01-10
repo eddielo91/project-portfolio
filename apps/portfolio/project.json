@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/portfolio",
   "projectType": "application",
-  "tags": [],
+  "tags": ["scope:portfolio", "type:app"],
   "// targets": "to see all targets run: nx show project portfolio --web",
   "targets": {}
 }
