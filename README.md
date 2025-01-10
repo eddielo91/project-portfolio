@@ -80,3 +80,65 @@ And join the Nx community:
 - [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
 - [Our Youtube channel](https://www.youtube.com/@nxdevtools)
 - [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+
+## Nx Folder Structure
+
+Type which defines "What is in this library”. eg. type:foo
+types:
+- feature, dependsOn: any
+- ui, dependsOn: ui, util
+- data-access, dependsOn: data-access, util
+- util
+
+Scope which defines "Where a library lives", "What visibility a library has", “who owns it”. eg. scope:foo
+scopes:
+- domain, dependsOn: shared
+- slice, dependsOn: domain/slice, shared
+- shared, dependsOn: shared
+- state
+- storybook*
+
+*: optional
+
+```
+libs/
+└── shared/ <scope:shared>
+  └── util-dates/ <type:util>
+      └── src/
+          ├── index.ts
+          └── lib/
+
+util-dates is a utility-type library with a shared visibility scope.
+```
+
+```
+libs/
+├── shared/ <scope:shared>
+│  ├── ui/ <type:ui>
+│  │  └── src/
+│  │      ├── index.ts
+│  │      └── lib/
+│  └── util-js/ <type:util>
+│     └── src/
+│         ├── index.ts
+│         └── lib/
+└── domains/ <scope:domain>
+    ├── clusters <slice:clusters>
+    │   ├── data-access <type:data-access>
+    │   │   └── src
+    │   │       ├── index.ts
+    │   │       └── lib
+    │   └── feature <type:feature>
+    │       └── src
+    │           ├── index.ts
+    │           └── lib
+    └── cloud-providers
+        ├── data-access
+        │   └── src
+        │       ├── index.ts
+        │       └── lib
+        └── feature
+            └── src
+                ├── index.ts
+                └── lib
+```
