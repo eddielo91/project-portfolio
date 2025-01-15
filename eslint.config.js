@@ -54,17 +54,13 @@ module.exports = [
               sourceTag: "type:util",
               onlyDependOnLibsWithTags: ["type:util"]
             },
-            // {
-            //   sourceTag: "scope:domain",
-            //   onlyDependOnLibsWithTags: ["scope:shared", "scope:domain"]
-            // },
             {
-              sourceTag: "scope:portfolio",
-              onlyDependOnLibsWithTags: ["scope:shared", "scope:portfolio"]
+              sourceTag: "scope:domain",
+              onlyDependOnLibsWithTags: ["scope:shared", "scope:domain"]
             },
             // {
             //   sourceTag: "scope:slice",
-            //   onlyDependOnLibsWithTags: ["scope:domain", "scope:slice", "scope:shared"]
+            //   onlyDependOnLibsWithTags: ["scope:slice", "scope:shared"]
             // },
             {
               sourceTag: "scope:shared",
