@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@libs/experience": [
+      "@libs/portfolio/experience": [
         "libs/domain/porfolio/feature/experience/src/index.ts"
       ]
     }
