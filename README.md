@@ -123,7 +123,7 @@ libs/
 │         ├── index.ts
 │         └── lib/
 └── domains/ <scope:domain>
-    ├── clusters <slice:clusters>
+    ├── clusters
     │   ├── data-access <type:data-access>
     │   │   └── src
     │   │       ├── index.ts
