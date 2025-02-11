@@ -1,4 +1,4 @@
-import { Experience } from '@libs/experience';
+import { PortfolioExperience } from '@libs/portfolio/experience';
 import styles from './page.module.scss';
 import Button from '@mui/material/Button';
 
@@ -11,7 +11,7 @@ export default function Index() {
   return (
     <div className={styles.page}>
       <Button variant="contained">Hello world</Button>
-      <Experience />
+      <PortfolioExperience />
       <div className="wrapper">
         <div className="container">
           <div id="welcome">

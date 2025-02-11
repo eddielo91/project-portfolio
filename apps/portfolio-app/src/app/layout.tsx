@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import './global.css';
 
 export const metadata = {
@@ -12,6 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+      </Head>
       <body>{children}</body>
     </html>
   );
