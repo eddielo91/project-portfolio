@@ -16,8 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@libs/portfolio/experience": [
-        "libs/domain/porfolio/feature/experience/src/index.ts"
-      ]
+        "libs/domain/portfolio/feature/experience/src/index.ts"
+      ],
+      "@libs/portfolio/ui": ["libs/domain/portfolio/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
