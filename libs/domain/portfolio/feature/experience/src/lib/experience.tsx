@@ -1,6 +1,6 @@
 import styles from './experience.module.scss';
 
-export function Experience() {
+export function PortfolioExperience() {
   return (
     <div className={styles['container']}>
       <h1>Welcome to Experience!</h1>
@@ -8,4 +8,4 @@ export function Experience() {
   );
 }
 
-export default Experience;
+export default PortfolioExperience;

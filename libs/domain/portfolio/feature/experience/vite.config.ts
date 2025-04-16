@@ -6,7 +6,7 @@ import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin';
 export default defineConfig({
   root: __dirname,
   cacheDir:
-    '../../../../../node_modules/.vite/libs/domain/porfolio/feature/experience',
+    '../../../../../node_modules/.vite/libs/domain/portfolio/feature/experience',
   plugins: [react(), nxViteTsPaths(), nxCopyAssetsPlugin(['*.md'])],
   // Uncomment this if you are using workers.
   // worker: {
@@ -20,7 +20,7 @@ export default defineConfig({
     reporters: ['default'],
     coverage: {
       reportsDirectory:
-        '../../../../../coverage/libs/domain/porfolio/feature/experience',
+        '../../../../../coverage/libs/domain/portfolio/feature/experience',
       provider: 'v8',
     },
   },
