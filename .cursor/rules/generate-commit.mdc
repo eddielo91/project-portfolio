@@ -1,0 +1,68 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Rules for Generating Commit Messages
+
+## I. Core Objective:
+
+Generate clear, concise, and standardized commit messages following the Conventional Commits specification (v1.0.0) based on the staged changes. This ensures a consistent and understandable commit history.
+
+## II. Commit Message Format:
+
+Adhere strictly to the following structure:
+
+<type>[optional scope]: <description>
+[optional body]
+[optional footer(s)]
+
+## III. Components:
+
+1.  **Type:** *Mandatory*. Must be one of the following lowercase keywords:
+    *   **feat:** A new feature introduced for the end-user.
+    *   **fix:** A bug fix for the end-user.
+    *   **chore:** Routine tasks, maintenance, dependency updates, build process changes (no production code changes).
+    *   **refactor:** Code changes that neither fix a bug nor add a feature (improving structure, performance, readability without functional change).
+    *   **style:** Code style changes only (whitespace, formatting, missing semi-colons, etc.).
+    *   **test:** Adding missing tests or correcting existing tests.
+    *   **docs:** Documentation changes only (README, comments, guides).
+    *   **perf:** Code changes specifically improving performance.
+    *   **build:** Changes affecting the build system or external dependencies (e.g., npm, Dockerfile, Webpack config).
+    *   **ci:** Changes to Continuous Integration configuration files and scripts (e.g., GitHub Actions, Travis CI).
+    *   **revert:** Indicates reverting a previous commit.
+
+2.  **Scope:** *Optional*. A lowercase noun describing the specific section of the codebase affected (e.g., `auth`, `ui-button`, `parser`, `api`, `docs`). Enclosed in parentheses `()`. Keep scopes consistent within the project.
+
+3.  **Description:** *Mandatory*. A concise summary of the code change.
+    *   Use the **imperative, present tense** (e.g., "change", "add", "fix", "update", not "changed", "added", "fixed", "updated").
+    *   **Do NOT capitalize** the first letter.
+    *   **Do NOT end with a period** (`.`).
+    *   Keep it short, ideally **under 50 characters**.
+
+4.  **Body:** *Optional*. Provides additional context, motivation, or details about the change.
+    *   Use the imperative, present tense.
+    *   Explain *what* was changed and *why*, not just *how*.
+    *   Separate from the description by **exactly one blank line**.
+    *   Wrap lines at 72 characters.
+
+5.  **Footer(s):** *Optional*. Contains metadata like issue references or breaking change information.
+    *   Separate from the body by **exactly one blank line**.
+    *   **Breaking Changes:** MUST start with `BREAKING CHANGE: ` (all caps) followed by a description of the breaking change and justification. A `!` MAY be appended to the `type` or `type(scope)` (e.g., `feat(api)!:`) to signify a breaking change in the header line.
+    *   **Issue References:** Use keywords like `Closes`, `Fixes`, `Resolves`, `Refs` followed by the issue number (e.g., `Closes #123`, `Fixes PROJECT-456`). Each reference should typically be on its own line.
+
+## IV. Generation Process:
+
+1.  **Analyze Staged Changes:** Use `git diff --staged` or equivalent to understand the primary purpose and impact of the changes.
+2.  **Determine Type:** Select the single most appropriate `<type>`. If multiple apply, prioritize user-facing impact (`feat`/`fix` > `refactor`/`perf` > `chore`/`style`/`test`/`docs`).
+3.  **Identify Scope (Optional):** If changes are isolated to a specific module/area, add a relevant `<scope>`. Omit if changes are widespread or hard to scope.
+4.  **Write Description:** Craft a short, imperative summary adhering to the rules above.
+5.  **Add Body (If Needed):** Include a body only if the description needs more context (e.g., explaining the 'why', detailing complex logic).
+6.  **Add Footers (If Applicable):** Scan for breaking changes and include a `BREAKING CHANGE:` footer. Check branch names/context for related issues and add reference footers.
+
+## V. Examples:
+
+*   **Simple Feature:** `feat: add user avatar upload capability`
+*   **Fix with Scope:** `fix(checkout): prevent double form submission`
+*   **Chore (No Scope):** `chore: update eslint configuration`
+*   **Docs with Issue Ref:** `docs: clarify authentication flow

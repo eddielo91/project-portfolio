@@ -1,0 +1,83 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Rules for Generating Pull Request Descriptions
+
+## I. Core Objective:
+
+Create clear, concise, and informative pull request descriptions that enable reviewers to understand the changes quickly and effectively.
+
+## II. Required Structure:
+
+Use the following markdown structure for all pull request descriptions. Sections marked with * (optional) can be omitted if not applicable.
+
+```markdown
+## Summary
+
+<!-- Provide a 1-2 sentence high-level summary of the changes. What is the main goal? -->
+
+## Related Ticket(s) *
+
+<!-- Link to relevant issue tracker tickets (e.g., JIRA, GitHub Issues). -->
+<!-- Example: Fixes #123, Closes PROJECT-456 -->
+
+## Changes Made
+
+<!-- Detail the specific technical changes implemented in this PR. -->
+<!-- Use bullet points for clarity. -->
+<!-- - Refactored component X for better readability. -->
+<!-- - Added new service Y to handle Z. -->
+<!-- - Updated dependencies A and B. -->
+<!-- - Fixed bug related to user input validation. -->
+
+## How to Test
+
+<!-- Provide clear, step-by-step instructions for reviewers to manually test the changes. -->
+<!-- Include setup steps if necessary. -->
+<!-- 1. Checkout this branch. -->
+<!-- 2. Run `npm install` and `npm run dev`. -->
+<!-- 3. Navigate to `/feature-page`. -->
+<!-- 4. Click the 'Submit' button with invalid data - expect validation errors. -->
+<!-- 5. Click the 'Submit' button with valid data - expect success message. -->
+
+## Screenshots / Screen Recordings *
+
+<!-- Include screenshots or recordings for UI changes. -->
+<!-- Use `<details><summary>Click to view</summary> ... </details>` for large images/gifs. -->
+
+## Checklist
+
+<!-- Ensure these items are completed before marking the PR as ready for review. -->
+<!-- Add or remove items based on project conventions. -->
+
+-   [ ] Code follows project style guide.
+-   [ ] Unit tests have been added or updated.
+-   [ ] Integration tests have been added or updated.
+-   [ ] Documentation has been updated (if applicable).
+-   [ ] Tested manually using the steps above.
+-   [ ] Affected stakeholders have been informed (if applicable).
+```
+
+## III. Content Guidelines:
+
+1.  **Summary:** Be brief and focus on the *why* and *what*.
+2.  **Tickets:** Always link relevant tickets if they exist.
+3.  **Changes Made:** Be specific but concise. Focus on *what* changed, not necessarily *how* every line was modified. Mention significant refactoring or architectural decisions.
+4.  **Testing:** Provide actionable steps. Assume the reviewer has basic knowledge of the project setup but might not know the specifics of this feature. Include expected outcomes.
+5.  **Screenshots:** Crucial for UI changes. Make them easy to understand.
+6.  **Checklist:** Adapt the checklist items to match your team's specific process (e.g., linting, build checks, accessibility tests).
+
+## IV. Tone and Style:
+
+1.  **Professional:** Maintain a professional and objective tone.
+2.  **Clear:** Use clear and unambiguous language. Avoid jargon where possible or explain it.
+3.  **Concise:** Get to the point. Reviewers appreciate brevity.
+
+## V. Context Usage:
+
+1.  **Analyze Changes:** Before generating the description, analyze the git diff/commit messages to understand the scope and nature of the changes.
+2.  **Infer Ticket:** If not explicitly provided, try to infer the related ticket from branch names or commit messages.
+3.  **Identify UI:** Detect if changes involve UI components to prompt for screenshots.
+4.  **Summarize Commits:** Use commit messages as a basis for the "Changes Made" section, but refine them for clarity and coherence.
